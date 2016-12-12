@@ -1,26 +1,43 @@
 <html>
-    <head>
-        <title>Groceries</title>
-        <script src="lib/angular.min.js"></script>
-        <script src="js/script.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body ng-app="myApp" ng-controller="myController">
-        <h1>Groceries</h1>
-        <div id="mainContainer">
-            <div id="btnContainer">
-                <!--<button id="btnAddItem">Add Item</button>-->
-            </div>
-            <table class="tblItems" border="1" cellpadding=10>
+
+<head>
+    <title>Technologies</title>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <h1>Technologies</h1>
+    <div id="mainContainer">
+        <div id="btnContainer">
+        </div>
+        <table class="tblItems" border="1" cellpadding=10>
+            <tr>
+                <td>Name</td>
+                <td>Likes</td>
+                <td>Dislikes</td>
+                <td>Like</td>
+                <td>Dislike</td>
+                <td>Remove</td>
+            </tr>
+            <tbody>
                 <tr ng-repeat="item in items">
-                    <!--<td><input type="checkbox" name="chkItem"></td>-->
                     <td>{{item.name}}</td>
                     <td>{{item.likes}}</td>
                     <td>{{item.dislikes}}</td>
-                    <td><input type="button" name="btnLike" value="Like" ng-click="IncrementLIkes(item)"></td>
-                    <td><input type="button" name="btnDisLike" value="Dislike" ng-click="IncrementDisLikes(item)"></td>
+                    <td><button name="btnLike" ng-click="IncrementLIkes(item)">
+                    <img src="./img/like.png" alt="Like"/></button></td>
+                    <td><button name="btnDisLike" ng-click="IncrementDisLikes(item)">
+                    <img src="./img/dislike.png" alt="DisLike"/></button></td>
+                    <td><button name="btnRemove" ng-click="RemoveItem(item)">
+                    <img src="./img/delete.png" alt="Delete"/></button></td>
                 </tr>
-            </table>
-        </div>
-    </body>
+            </tbody>
+        </table><br>
+        <input type="text" ng-model="item">
+        <button ng-click="InsertItem(item)" name="AddItem">Add Item</button>
+    </div>
+</body>
+
 </html>
