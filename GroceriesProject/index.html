@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Groceries</title>
+        <script src="lib/angular.min.js"></script>
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body ng-app="myApp" ng-controller="myController">
+        <h1>Groceries</h1>
+        <div id="mainContainer">
+            <div id="btnContainer">
+                <!--<button id="btnAddItem">Add Item</button>-->
+            </div>
+            <table class="tblItems" border="1" cellpadding=10>
+                <tr ng-repeat="item in items">
+                    <!--<td><input type="checkbox" name="chkItem"></td>-->
+                    <td>{{item.name}}</td>
+                    <td>{{item.likes}}</td>
+                    <td>{{item.dislikes}}</td>
+                    <td><input type="button" name="btnLike" value="Like" ng-click="IncrementLIkes(item)"></td>
+                    <td><input type="button" name="btnDisLike" value="Dislike" ng-click="IncrementDisLikes(item)"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
