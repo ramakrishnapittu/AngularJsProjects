@@ -4,6 +4,7 @@
     <title>Employees Filter</title>
     <script src="lib/angular.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/customFilter.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -11,7 +12,24 @@
     <h1>EMPLOYEES DETAILS</h1>
     <div id="mainContainer">
         <div id="inputContainer">
-            Rows to display : <input type="number" ng-model="limitNumber" min="1" max="5">
+            Rows to display : <input type="number" ng-model="limitNumber" min="1" max="5"> Sort by : <select ng-model="sortColumn">
+                <option value="name">Name</option>
+                <option value="date">Date</option>
+                <option value="gender">Gender</option>
+                <option value="salary">Salary</option>
+                </select>
+            <select ng-model="descend">
+                <option value="+">Ascending</option>
+                <option value="-">Descending</option>
+                </select> Search : <input type="text" ng-model="searchText" />
+            <!--in Column <select ng-model="searchColumn">
+                <option value=".">All</option>
+                <option value=".name">Name</option>
+                <option value=".date">Date</option>
+                <option value=".gender">Gender</option>
+                <option value=".salary">Salary</option>-->
+            </select>
+            Hide Salary : <input type="checkbox" ng-model="hideSalary">
         </div>
         <br />
         <table class="tblEmp" border="1" cellpadding=10>
@@ -20,15 +38,18 @@
                 <td>DOB</td>
                 <td>Gender</td>
                 <td>Salary (number)</td>
-                <td>Salary (currency)</td>
+                <td ng-hide="hideSalary">Salary (currency)</td>
+                <td ng-show="hideSalary">Salary (currency)</td>
             </tr>
             <tbody>
-                <tr ng-repeat="emp in employees | limitTo : limitNumber">
+                <tr ng-repeat="emp in employees 
+                | limitTo : limitNumber | orderBy : descend+sortColumn | filter : searchText">
                     <td>{{emp.name | uppercase}}</td>
                     <td>{{emp.dob | date : "dd:MM:yyyy"}}</td>
-                    <td>{{emp.gender | lowercase}}</td>
+                    <td>{{emp.gender | CapitalizeFirstLetter}}</td>
                     <td>{{emp.salary | number}}</td>
-                    <td>{{emp.salary | currency:"INR"}}</td>
+                    <td ng-hide="hideSalary">{{emp.salary | currency:"INR"}}</td>
+                    <td ng-show="hideSalary"> #### </td>
                 </tr>
             </tbody>
         </table><br>

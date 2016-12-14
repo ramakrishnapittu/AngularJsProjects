@@ -4,14 +4,17 @@
     <title>Technologies</title>
     <script src="lib/angular.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/customFilter.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body ng-app="myApp" ng-controller="myController">
     <h1>Technologies</h1>
     <div id="mainContainer">
-        <div id="btnContainer">
-        </div>
+        <!-- *****This is to include the employees html file in the current file*****
+            <div id="employeesContainer" ng-controller="EmployeesController">
+            <div ng-include="employeeView"></div>
+        </div>-->
         <table class="tblItems" border="1" cellpadding=10>
             <tr>
                 <td>Name</td>

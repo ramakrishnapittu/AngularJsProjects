@@ -53,5 +53,10 @@ myApp.controller("EmployeesController", function ($scope) {
     { name: "Madhu", dob: new Date(Date.now()), gender: "male", salary: 29000 },];
     $scope.employees = employees;
 
-    $scope.limitNumber = 1;
+    $scope.limitNumber = 5;
+
+    $scope.sortColumn = "name";
+    $scope.descend = "+";
+
+    $scope.employeeView = "employees.html";
 });
