@@ -6,6 +6,7 @@ myApp.controller("myController", function ($scope) {
     { name: "C#", likes: 0, dislikes: 0 },
     { name: "PHP", likes: 0, dislikes: 0 },
     { name: "HTML", likes: 0, dislikes: 0 }];
+
     $scope.items = items;
 
     $scope.IncrementLIkes = function (item) {
@@ -16,18 +17,41 @@ myApp.controller("myController", function ($scope) {
     }
     $scope.InsertItem = function (item) {
         item = item.toUpperCase();
-        var blnDontInsert = false;
-        angular.forEach(items, function (keyitem) {
-            if (keyitem.name == item)
-            { blnDontInsert = true; }
-            else { console.log(keyitem.name); }
-        });
-        if (!blnDontInsert) {
+        if (!DuplicatePresent(item)) {
             var newItem = { name: item, likes: 0, dislikes: 0 };
             items.push(newItem);
         }
+        //Uncomment this else if you want to write message to the user when entered tech is already there.
+        /*else{
+            $scope.error = "Technology already present in list";
+            setTimeout(function() {
+                $scope.error = "";
+                console.log("error : "+$scope.error);
+            },3000);
+        }*/
     }
     $scope.RemoveItem = function (item) {
         items.splice(items.indexOf(item), 1);
     }
+    $scope.EditItem = function (item) {
+
+    }
+    function DuplicatePresent(item) {
+        var blnDontInsert = false;
+        angular.forEach(items, function (keyitem) {
+            if (keyitem.name == item) blnDontInsert = true;
+        });
+        return blnDontInsert;
+    }
+});
+
+myApp.controller("EmployeesController", function ($scope) {
+    var employees = [{ name: "RK", dob: new Date(Date.now()), gender: "male", salary: 25000 },
+    { name: "Leela", dob: new Date(Date.now()), gender: "female", salary: 25000 },
+    { name: "Satti", dob: new Date(Date.now()), gender: "male", salary: 30000 },
+    { name: "Rama", dob: new Date(Date.now()), gender: "female", salary: 27000 },
+    { name: "Madhu", dob: new Date(Date.now()), gender: "male", salary: 29000 },];
+    $scope.employees = employees;
+
+    $scope.limitNumber = 1;
 });

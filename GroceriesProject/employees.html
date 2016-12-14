@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Employees Filter</title>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="myApp" ng-controller="EmployeesController">
+    <h1>EMPLOYEES DETAILS</h1>
+    <div id="mainContainer">
+        <div id="inputContainer">
+            Rows to display : <input type="number" ng-model="limitNumber" min="1" max="5">
+        </div>
+        <br />
+        <table class="tblEmp" border="1" cellpadding=10>
+            <tr>
+                <td>Name</td>
+                <td>DOB</td>
+                <td>Gender</td>
+                <td>Salary (number)</td>
+                <td>Salary (currency)</td>
+            </tr>
+            <tbody>
+                <tr ng-repeat="emp in employees | limitTo : limitNumber">
+                    <td>{{emp.name | uppercase}}</td>
+                    <td>{{emp.dob | date : "dd:MM:yyyy"}}</td>
+                    <td>{{emp.gender | lowercase}}</td>
+                    <td>{{emp.salary | number}}</td>
+                    <td>{{emp.salary | currency:"INR"}}</td>
+                </tr>
+            </tbody>
+        </table><br>
+    </div>
+</body>
+
+</html>
