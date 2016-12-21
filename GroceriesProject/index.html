@@ -22,7 +22,6 @@
                 <td>Dislikes</td>
                 <td>Like</td>
                 <td>Dislike</td>
-                <td>Edit</td>
                 <td>Remove</td>
             </tr>
             <tbody>
@@ -34,8 +33,6 @@
                     <img src="./img/like.png" alt="Like"/></button></td>
                     <td><button name="btnDisLike" ng-click="IncrementDisLikes(item)">
                     <img src="./img/dislike.png" alt="DisLike"/></button></td>
-                    <td><button name="btnEdit" ng-click="EditItem(item)">
-                    <img src="./img/delete.png" alt="Edit"/></button></td>
                     <td><button name="btnRemove" ng-click="RemoveItem(item)">
                     <img src="./img/delete.png" alt="Delete"/></button></td>
                 </tr>
@@ -44,7 +41,18 @@
         <input type="text" ng-model="item">
         <button ng-click="InsertItem(item)" name="AddItem">Add Item</button>
         <span class="errorMsg" ng-model="error">{{ error }}</span>
-    </div>
+    </div><br/>
+    <div ng-controller="serviceController">
+        <button ng-click="GenerateRandomNumber()">Click to Generate Random Number (Service)</button>
+        {{RandomNumber}}
+        <br />
+        <br />
+        <button ng-click="GenerateRandomNumberByFactory()">Click to Generate Random Number(Factory)</button>
+        {{RandomNumberTwo}}
+        <br />
+        <br />
+        <button ng-click="GenerateRandomNumberByProvider()">Click to Generate Random Number(Provider)</button>
+        {{RandomNumberThree}}</div>
 </body>
 
 </html>

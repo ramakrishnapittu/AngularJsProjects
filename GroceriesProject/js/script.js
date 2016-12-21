@@ -60,3 +60,42 @@ myApp.controller("EmployeesController", function ($scope) {
 
     $scope.employeeView = "employees.html";
 });
+
+myApp.service("random",function(){
+    var num = Math.ceil(Math.random()*10);
+    this.generateRandom = function(){
+        return num;
+    }
+});
+
+myApp.factory("randomObj",function(){
+    var randomObject = {};
+    var num = Math.ceil(Math.random()*10);
+    randomObject.generateRandom = function(){
+        return num;
+    }
+    return randomObject;
+});
+
+myApp.provider("randomProvider",function(){
+    var num = Math.ceil(Math.random()*10);
+    return {
+        $get : function(){
+            return{
+                number : num
+            }
+        } 
+    };
+});
+
+myApp.controller("serviceController",function($scope,random,randomObj,randomProvider){
+    $scope.GenerateRandomNumber = function(){
+        $scope.RandomNumber = random.generateRandom();
+    };
+    $scope.GenerateRandomNumberByFactory = function(){
+        $scope.RandomNumberTwo = randomObj.generateRandom();
+    };
+    $scope.GenerateRandomNumberByProvider = function(){
+        $scope.RandomNumberThree = randomProvider.number;
+    };
+});
