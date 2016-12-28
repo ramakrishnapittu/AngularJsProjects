@@ -2,17 +2,30 @@
 
 <head>
     <title>Employees Filter</title>
+    <!-- Includes Css files -->
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Includes Js files -->
     <script src="lib/angular.min.js"></script>
+
+    <script src="js/App.js"></script>
+    <script src="js/fileAppControllers.js"></script>
+    <script src="js/fileAppDirectives.js"></script>
+
+    <script src="js/dropzone.js"></script>
+
     <script src="js/script.js"></script>
     <script src="js/customFilter.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body ng-app="myApp" ng-controller="EmployeesController">
     <h1>EMPLOYEES DETAILS</h1>
     <div id="mainContainer">
         <div id="inputContainer">
-            Rows to display : <input type="number" ng-model="limitNumber" min="1" max="5"> Sort by : <select ng-model="sortColumn">
+            Rows to display : <input type="number" ng-model="limitNumber" min="1" max="5"> Sort by :
+            <select ng-model="sortColumn">
+
                 <option value="name">Name</option>
                 <option value="date">Date</option>
                 <option value="gender">Gender</option>
@@ -54,6 +67,26 @@
             </tbody>
         </table><br>
     </div>
+    <div class="col-xs-6 col-xs-offset-3" ng-app="fileApp" ng-controller="fileCtrl" ng-cloak>
+        <div>
+            <form action="/Uploads/" class="dropzone" id="dropzone">
+                <div class="dz-default dz-message">
+                </div>
+            </form>
+        </div>
+        <!--<div class="pull-right">
+        <button class="btn btn-success" ng-click="uploadFile()">Upload File</button>
+        <button class="btn btn-danger" ng-click="reset()">Reset Dropzone</button>
+    </div>
+    <div>
+        <form>
+            <label>File to download</label>
+            <input ng-model="filename" type="text" placeholder="Filename" />
+            <a class="btn btn-primary" href="" ng-href="{{ partialDownloadLink + filename }}">Download File</a>
+        </form>
+    </div>-->
+    </div>
+
 </body>
 
 </html>
