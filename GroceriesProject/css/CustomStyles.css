@@ -1,0 +1,69 @@
+#topContainer{
+    background-color:#333;
+    color : white;
+}
+#ContactUs > span > h4 > a{
+    line-height: 1.5em;
+}
+#pypelogo img{
+    width: 150px;
+    padding: 5px 0px;
+}
+#imgNavHeader{
+    width: 100px;
+}
+#myScrollspy{
+    background-color: #334;
+}
+.container-fluid, .container{
+    padding : 0px !important;
+}
+#home{
+    background: url('../img/construction_helmet_arm_80718_1920x1080.jpg') no-repeat center center fixed;
+}
+#pageOneContainer{
+    background: url('../img/bridge_fog_river_construction_30736_1920x1080.jpg') no-repeat center center fixed;
+}
+#pageTwoContainer{
+    background: url('../img/Cartoons_Mignon_dinner_at_a_construction_site_104277_.jpg') no-repeat center center fixed;
+}
+#pageThreeContainer{
+    background: url('../img/baukran-1707150_960_720.jpg') no-repeat center center fixed;
+}
+#home , #pageOneContainer, #pageTwoContainer, #pageThreeContainer{
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.innerText{
+    padding-top: 250px;
+    color: white;
+}
+body{
+    position: relative;
+    height: 100%;
+}
+.footer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    background-color: #334;
+}
+.footer a {
+    color: lightgreen;
+    font-size: 20px;
+    padding: 10px;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.footer strong{
+    color: lightgreen;
+    font-size: 20px;
+}
+.footer a:hover {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
