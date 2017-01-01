@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="../img/pype-favicon.gif" />
+    <title>Login Responsive</title>
+
+    <link rel="stylesheet" href="../css/CustomStyles.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/jquery.min.js"></script>
+    <script src="../lib/bootstrap.min.js"></script>
+    <script src="../js/script.js"></script>
+
+</head>
+
+<body>
+    <!--Header Section-->
+    <div id="headerContainer">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img id="imgNavHeader" src="../img/logo.png" alt="Pype Logo" />
+                    </a>
+                </div>
+                <ul class="nav navbar-nav pull-right">
+                    <li><a href="signup.html">Signup</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--Main content-->
+    <div id="loginContainer" class="row">
+        <form method="POST" action="Bootstrap.html">
+        <div class="signinContainer col-md-offset-4 col-md-3 form-group">
+            <div class="container-fluid">
+                <img src="../img/user_man_male_profile_account-512.png" alt="avatar"
+                />
+                <input class="form-control" type="email" name="email" placeholder="email@sample.com" required autofocus/>
+                <input class="form-control" type="password" name="pwd" placeholder="password" required/><br />
+                <div>
+                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                </div><br />
+                <input type="checkbox" /> Remember Me
+                <a href="#">Forgot password</a>
+            </div>
+        </div>
+        </form>
+    </div>
+
+    <!--Footer Section-->
+    <div class="navbar navbar-fixed-bottom footer row">
+        <strong class="col-xs-4 text-center">Pype Inc &copy; 2016</strong>
+        <span class="col-xs-4 text-center">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-skype"></i></a>
+        </span>
+        <span class="col-xs-4 text-center"><a href="#"> Terms of Service</a></span>
+    </div>
+</body>
+
+</html>

@@ -67,3 +67,28 @@ body{
     font-size: 25px;
     text-decoration: none;
 }
+#loginContainer{
+    padding-top: 80px;
+}
+.signinContainer{
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+.form-control{
+    margin-top: 10px;
+}
+.signinContainer img{
+    width: 216px;
+    height: 216px;
+    display: block;
+    margin: auto;
+}
+.signinContainer a{
+    float: right;
+}
+input{
+    padding: 20px;
+}
+#imgProfile{
+    margin-top: 12px;
+}
