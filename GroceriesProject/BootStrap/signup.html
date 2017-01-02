@@ -33,7 +33,7 @@
             </div>
         </nav>
     </div>
-    <!--Main content-->
+    <!--Main content Section-->
     <div id="loginContainer" class="row">
         <form action="login.html" method="POST">
             <div class="signinContainer col-md-offset-4 col-md-3 form-group">
@@ -44,10 +44,10 @@
                     <input class="form-control" type="email" name="email" placeholder="email@sample.com" required/>
                     <input class="form-control" type="password" name="pwd" placeholder="password" required/>
                     <input class="form-control" type="password" name="confrmpwd" placeholder="Confirm password" required/>
-                    <input class="form-control" type="text" name="mobile" placeholder="Mobile Number"
-                    maxlength="12" minlength="10" required/>
+                    <input class="form-control" type="text" name="mobile" placeholder="Mobile Number" maxlength="12" minlength="10" required/>
                     <br />
-                    <input type="checkbox" required/> I Agree to Terms and Conditions<br />
+                    <input id="chkbxTerms" type="checkbox" required/>
+                    <label for="chkbxTerms"> I Agree to Terms and Conditions</label><br />
                     <br />
                     <div>
                         <button type="submit" class="btn btn-primary btn-block">Signup</button>

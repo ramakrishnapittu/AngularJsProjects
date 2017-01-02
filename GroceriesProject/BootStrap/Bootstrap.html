@@ -31,17 +31,22 @@
                     <li><a href="#pageOneContainer">Slide One</a></li>
                     <li><a href="#pageTwoContainer">Slide Two</a></li>
                     <li><a href="#pageThreeContainer">Slide Three</a></li>
-                    <li class="dropdown">Profile<img id="imgProfile" class="dropdown-toggle" data-toggle="dropdown"
-                     src="../img/user-male-black-shape.png" alt="profile icon">
-                        <ul class="dropdown-menu">
+                    <li class="dropdown">
+                        <!--<img id="imgProfile" class="dropdown-toggle" data-toggle="dropdown" 
+                        src="../img/user-male-black-shape.png" alt="profile icon">-->
+                        <a href="#" id="profileIcon" data-toggle="dropdown"><span class="glyphicon glyphicon-user dropdown-toggle" >
+                        </span></a>
+                        <ul class="dropdown-menu dropdown-menu-right">
                             <li><a href="#">Profile</a>
+                            </li>
+                            <li><a href="#">Notifications<span class="badge"> 10</span></a>
                             </li>
                             <li><a href="#">Settings</a>
                             </li>
                             <li><a href="login.html">Logout</a>
                             </li>
                         </ul>
-                     </li>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -49,7 +54,7 @@
     <header>
         <div id="home" class="container-fluid">
             <h2 class="innerText"><strong>WELCOME TO PYPE</strong><br /><br />
-                <button class="btn btn-info btn-lg">Lets Start Here</button>
+                <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#welcome">Lets Start Here</button>
             </h2>
         </div>
     </header>
@@ -67,10 +72,65 @@
     </div>
 
     <div id="pageThreeContainer" class="container-fluid">
-        <h2 class="innerText"><strong>WELCOME TO PYPE</strong><br /><br />
-            <button class="btn btn-primary btn-lg">Lets Start Here</button>
-        </h2>
+
+        <!-- Uncomment this to get the tabs functionality -->
+        <!--<ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#homecontent">Home</a>
+            </li>
+            <li><a data-toggle="tab" href="#dashboardcontent">Dashboard</a>
+            </li>
+            <li><a data-toggle="tab" href="#profilecontent">Profile</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="homecontent" class="textcolor tab-pane fade in active">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum risus mi, sit amet auctor enim interdum ullamcorper.
+                Quisque mauris sem, rhoncus id bibendum quis, fermentum vitae diam. Vestibulum imperdiet nulla vel felis
+                suscipit, a venenatis metus elementum. Nulla cursus placerat libero, commodo viverra enim vestibulum in.
+                Pellentesque ut felis a metus imperdiet accumsan. Praesent et orci at ante volutpat ultrices. Curabitur mollis
+                feugiat eleifend. Ut fringilla tellus non consequat condimentum. Cum sociis natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Aliquam semper, dui a venenatis mollis, dui eros lacinia erat,
+                viverra facilisis odio sem sed risus. Fusce eget lacus vitae turpis convallis tincidunt vel non urna. Integer
+                id congue erat. Maecenas ultrices condimentum urna quis molestie. Class aptent taciti sociosqu ad litora
+                torquent per conubia nostra, per inceptos himenaeos. In ac leo augue.
+            </div>
+            <div id="dashboardcontent" class="textcolor tab-pane fade">
+                Vestibulum gravida gravida libero quis viverra. In cursus eget nibh in imperdiet. Aenean ante lorem, maximus quis sapien
+                elementum, iaculis suscipit augue. Quisque at hendrerit sapien, et posuere massa. Aliquam erat volutpat.
+                In sed malesuada purus. Fusce fermentum mi elit, quis sodales ligula placerat eu. Cras iaculis et ipsum vitae
+                maximus. Ut efficitur, diam nec blandit tempus, felis ipsum ultricies nunc, at hendrerit lacus erat id turpis.
+                Aenean ac euismod metus. Quisque pretium quam eu neque fringilla, id commodo nulla rhoncus. Aliquam aliquam
+                nec sem in semper. Vestibulum vulputate lorem nec tincidunt condimentum.
+            </div>
+            <div id="profilecontent" class="textcolor tab-pane fade">
+                Aliquam convallis, dolor at eleifend pulvinar, odio est tristique massa, vel feugiat tortor mi ac ligula. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus. Praesent at viverra nulla. Etiam ullamcorper ante nec orci vehicula
+                convallis. In ac ipsum vestibulum, vestibulum tellus eu, condimentum eros. Donec sed ornare diam. Etiam ut
+                ex fermentum, dignissim turpis euismod, scelerisque turpis. Sed pellentesque libero ac varius scelerisque.
+                Pellentesque luctus est turpis, at ultricies arcu pellentesque vel.
+            </div>
+        </div>-->
     </div>
+
+
+    <!--Modal-->
+    <div class="modal fade" id="welcome">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">WELCOME</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Nice to have you here</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--<div ng-include="'footer.html'"></div>-->
     <div class="navbar navbar-fixed-bottom footer row">
         <strong class="col-xs-4 text-center">Pype Inc &copy; 2016</strong>

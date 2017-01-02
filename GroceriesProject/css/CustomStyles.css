@@ -92,3 +92,12 @@ input{
 #imgProfile{
     margin-top: 12px;
 }
+#imgProfile:hover{
+    cursor: pointer;
+}
+.textcolor{
+    color: white;
+}
+#profileIcon{
+    padding-top: 20px;
+}
