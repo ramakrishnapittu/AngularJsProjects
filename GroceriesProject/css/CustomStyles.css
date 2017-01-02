@@ -1,6 +1,5 @@
 #topContainer{
     background-color:#333;
-    color : white;
 }
 #ContactUs > span > h4 > a{
     line-height: 1.5em;
@@ -39,7 +38,6 @@
 }
 .innerText{
     padding-top: 250px;
-    color: white;
 }
 body{
     position: relative;
@@ -48,7 +46,6 @@ body{
 .footer{
     padding-top: 20px;
     padding-bottom: 20px;
-    color: white;
     background-color: #334;
 }
 .footer a {
@@ -63,7 +60,6 @@ body{
     font-size: 20px;
 }
 .footer a:hover {
-    color: white;
     font-size: 25px;
     text-decoration: none;
 }
@@ -80,8 +76,6 @@ body{
 .signinContainer img{
     width: 216px;
     height: 216px;
-    display: block;
-    margin: auto;
 }
 .signinContainer a{
     float: right;
@@ -95,9 +89,31 @@ input{
 #imgProfile:hover{
     cursor: pointer;
 }
-.textcolor{
+.textcolor, .footer a:hover, .footer, .innerText, #topContainer{
     color: white;
 }
 #profileIcon{
     padding-top: 20px;
+}
+.comments{
+    width: 90%;
+}
+.comments img{
+    width:100px;
+}
+#mainContainer{
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+.carousel-inner .item img,
+.carousel-inner .item a img {
+    width: 1230px;
+    height: 600px !important;
+}
+#cmnts{
+    width:400px;
+}
+.carousel-inner .item img, .carousel-inner .item a img, .comments, .signinContainer img{
+    display: block;
+    margin:auto;
 }
